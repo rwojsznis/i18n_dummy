@@ -1,0 +1,11 @@
+- if diff.any?
+  table.table
+    thead
+      tr
+        th colspan=2
+          span.label.label-success New/updated nodes from base locale
+    tbody
+      - diff.new_nodes.each do |n|
+        == n.to_html_diff
+- else
+  p.text-center.text-success File is in sync

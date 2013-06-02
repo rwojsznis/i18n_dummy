@@ -1,0 +1,8 @@
+form action="/parse" method="post"
+  fieldset
+    legend Looking good?
+    label.checkbox
+      input type="checkbox" name="backup"
+        | Create .bak files
+    input type="hidden" name="locale" value=(params[:locale])
+    button.btn.btn-success type="submit" Parse the files

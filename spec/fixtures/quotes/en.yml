@@ -1,0 +1,10 @@
+en:
+  old_key: "How r u?"
+  new_key:
+    key1: "I'm fine"
+    key2: 'I''m "fine"'
+    key3: "I'm \"fine\""
+    key4: "http://www.test.com/example.com"
+    key5: 'http://see.us/?test'
+    key6: "<span class='test'>\"Nice!\"</span>"
+    key7: "<a title=''>link</a>"

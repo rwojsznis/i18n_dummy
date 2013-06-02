@@ -1,0 +1,12 @@
+en:
+  dashboard:
+    title: "title"
+    nested:
+      title: "nested title"
+    more:
+      title: "more on title"
+    less:
+      title: "less on title"
+  something:
+    title: "something title"
+  title: "main title"

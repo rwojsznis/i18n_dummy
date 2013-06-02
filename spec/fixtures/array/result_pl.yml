@@ -1,0 +1,8 @@
+pl:
+  key1:
+    key2:
+      - "Hi!" # FIX ME
+      - "I'm an array!" # FIX ME
+      - "You ok with that?" # FIX ME
+  key3:
+    - "Thiz iz not eazy" # FIX ME

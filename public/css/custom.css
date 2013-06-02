@@ -1,0 +1,29 @@
+em.comment { color: #AAA; padding-left: 5px; }
+.preview  div { padding: 3px; }
+.preview  span { padding-left: 5px; }
+.multiline span { display: block }
+
+
+tr.info td:after, tr.warning td:after, tr.error td:after {
+  float: right;
+  font-size: 90%;
+  font-weight: bold
+}
+
+
+tr.info td:nth-child(2):after {
+  content: "Updated";
+}
+
+tr.warning td:nth-child(2):after {
+  content: "Pending"
+}
+
+tr.error td:nth-child(2):after {
+  content: "Will be removed"
+}
+
+tbody > tr > td:nth-child(1) {
+  font-size: 85%;
+  width: 20px;
+}

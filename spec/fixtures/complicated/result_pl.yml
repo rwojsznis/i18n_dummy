@@ -1,0 +1,34 @@
+pl:
+  account_connections:
+    roles:
+      admin:
+        - "Dostęp i możliwość aktualizacji konta"
+        - "Zarządzanie użytkownikami"
+        - "This line was not translated" # FIX ME
+        - "Zarządzanie raportami"
+  mailer:
+    common:
+      greetings:
+        hi: "Hi" # FIX ME
+      greetings_no_name: "Witaj"
+      application: "Przejdź do aplikacji"
+      tagline: "Monitoruj pozycje stron w wyszukiwarkach"
+      questions: "Pytania?"
+      contact: "Osoba kontaktowa"
+      support:
+        position: "Customer Support" # FIX ME
+      unsubscribe_html: "Możesz <a class='fadedOut' href='%{url}'>wypisać się</a> z cyklicznych notyfikacji."
+      sent_with_love: "Sent with love" # FIX ME
+  dashboard:
+    dashboard: "Kokpit"
+    tip_html: "Some html tip" # FIX ME
+    title: "Ostatnio"
+    bar:
+      title: "Pozycje we wszystkich wyszukiwarkach"
+    average:
+      title: "Średnia pozycja stron"
+    account:
+      title: "Twoje konto"
+    chart:
+      title: "This was not translated and not updated and has comment" # FIX ME
+      first10: "dla pierwszych 10 stron"

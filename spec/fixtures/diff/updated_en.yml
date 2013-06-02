@@ -1,0 +1,30 @@
+en:
+  account_connections:
+    roles:
+      admin:
+        - "View and update account"
+  mailer:
+    common:
+      greetings: "Hi"
+      greetings_no_name: "Hey there"
+      application: "Go to application"
+      tagline: "Track and improve your website’s position"
+      questions: "Questions?"
+      contact: "Contact"
+      support:
+        positionU: "Customer Support"
+      unsubscribe_html: "You can <a class='fadedOut' href='%{url}'>unsubscribe</a> from periodical notification."
+      sent_with_loveU: "Sent with love"
+  dashboard:
+    dashboard: "Launch the tour"
+    tip_html: "Some html tip"
+    title: "Dashboard"
+    bar:
+      titleU: "Positions for all engines"
+    average:
+      title: "Average position"
+    account:
+      title: "Your account"
+    chart:
+      title: "Average positions"
+      first10U: "for the first 10 websites"

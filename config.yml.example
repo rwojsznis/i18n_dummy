@@ -1,0 +1,10 @@
+application:
+  base: 'locales/base.en.yml'
+  polish: 'locales/base.pl.yml'
+  spanish: 'locales/base.se.yml'
+  french: 'locales/base.fr.yml'
+tour:
+  base: 'locales/tour.en.yml'
+  polish: 'locales/tour.pl.yml'
+  spanish: 'locales/tour.se.yml'
+  french: 'locales/tour.fr.yml'

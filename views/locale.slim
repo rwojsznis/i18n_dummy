@@ -1,0 +1,25 @@
+- if @flash
+  .alert.alert-success Files parsed!
+
+== slim :submit
+
+ul.nav.nav-tabs
+  - @translations.each_with_index do |(key, value), idx|
+    li class=("active" if idx == 0)
+      a href="##{key}" data-toggle="tab" = key
+
+.tab-content
+  - @translations.each_with_index do |(key, value), idx|
+    .tab-pane id=(key) class=("active" if idx == 0)
+
+      - if @diff[key]
+        == slim :new_nodes, :locals => { :diff => @diff[key] }
+
+      table.table.table-striped
+        thead
+          tr
+            th colspan=2
+              span.label.label-info Current file preview
+
+        tbody.preview
+          == (idx == 0 ? value.html_output : value.html_output(@translations[:base]))

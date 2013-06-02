@@ -1,0 +1,9 @@
+en:
+  key: "value"
+  nested:
+    key: "value"
+    ok: "true"
+    locale:
+      test: "yes"
+    locale: "this should explode" # If would normally get overridden when loading with Psych
+    end: "true"

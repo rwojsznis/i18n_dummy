@@ -1,0 +1,8 @@
+en:
+  key1:
+    key2U:
+      - "Hi!"
+      - "I'm an array!"
+      - "You ok with that?"
+  key3U:
+    - Thiz iz not eazy

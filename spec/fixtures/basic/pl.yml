@@ -1,0 +1,6 @@
+pl:
+  key1:
+    key2: "Translated Hello"
+    key3: "What's up?" # FIX ME
+  key4: "Translated are you ok"
+  key5: "I'm not needed anymore!"

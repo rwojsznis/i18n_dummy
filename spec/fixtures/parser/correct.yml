@@ -1,0 +1,20 @@
+en:
+  key1: # Some random comments here, ay!
+    key2:
+      - "Hi!"
+      - "I'm an array!"
+      - "You ok with that?"
+  key3:
+    key4: "And I'm not" # FIX ME
+  key5: "YAML is not very nice"
+  key6:
+    - "Don't you think?"
+    - I know I do!
+    - 'Do you, really?' # TODO
+  key7:
+    key8:
+      key9:
+        key10: "U mad bro"
+    key11: "No, you mad!"
+    key12:
+      - Sup?
