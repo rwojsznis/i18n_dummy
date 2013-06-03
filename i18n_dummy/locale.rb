@@ -15,7 +15,7 @@ module I18nDummy
           if node_local.nil?
             result.parsed[idx+1] = node.replicate(locale.country_code)
           else
-            if node.updated? || (node.no_value? && !node_local.no_value?) # FIXME
+            if updated_node?(node, node_local)
               node_local.set_updated_values node.value
               node_local.multiline! if node.multiline?
             end
@@ -27,6 +27,13 @@ module I18nDummy
 
         result
       end
+
+      private
+
+        def updated_node?(node, node_local)
+          # base node was updated or it's structure was changed (nested)
+          node.updated? || (node.no_value? && !node_local.no_value?)
+        end
     end
   end
 end
