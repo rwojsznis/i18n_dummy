@@ -1,6 +1,6 @@
 module I18nDummy
   module Parser
-    class NodeValue < OpenStruct
+    class NodeValue < Struct.new(:content, :comment)
       def initialize(value)
         value = value.strip.gsub(/^-\s?/,'')
 
@@ -11,7 +11,7 @@ module I18nDummy
           comment: comment ? comment.strip : nil
         }
 
-        super args
+        super *args.values
       end
 
       def to_s

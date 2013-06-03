@@ -1,6 +1,6 @@
 module I18nDummy
   module Parser
-    class Node < OpenStruct
+    class Node < Struct.new(:value, :key, :depth, :multiline, :path, :updated)
       attr_accessor :line, :deleted
 
       def initialize(line, path, line_number)
@@ -20,7 +20,7 @@ module I18nDummy
         @line = line_number
         @deleted = false
 
-        super(args)
+        super(*args.values)
       end
 
       def replicate(country_code)
