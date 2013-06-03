@@ -5,25 +5,34 @@ module I18nDummy
       attr_accessor :parsed, :current_line, :file, :key_stack
 
       def initialize(file)
-        start = Time.now
+        start         = Time.now
         @parsed       = []
         @current_line = 0
         @file         = path_name(file)
         @key_stack    = Set.new
+        content       = File.read(file)
 
-        psych_check(File.read(file))
-        parse
+        psych_check(content)
+        parse(content)
 
         debug_speed "I18nDummy::Parser::Base.initialize", start
       end
 
       def find_by_path(path)
-        idx = full_paths.key(path)
-        parsed[idx] if idx
+        index = full_paths.key(path)
+        parsed[index] if index
+      end
+
+      def head
+        parsed.first
+      end
+
+      def without_head
+        parsed.drop(1)
       end
 
       def country_code
-        parsed.first.key
+        head.key
       end
 
       def output
@@ -48,7 +57,7 @@ module I18nDummy
         psych_check(output)
       end
 
-      def save!(backup = nil)
+      def save!(backup = false)
         FileUtils.cp file,("#{file}.bak") if backup
         File.open(file, 'w') { |f| f.write(output) }
       end
@@ -57,8 +66,9 @@ module I18nDummy
         parsed.each { |p| puts p.inspect }
       end
 
+      # it's not pretty but it's faster than original approach
       def full_paths
-        @full_paths ||= Hash[parsed.drop(1).map.each_with_index do |p, i|
+        @full_paths ||= Hash[without_head.map.each_with_index do |p, i|
           [i+1, p.full_path]
         end]
       end
@@ -75,13 +85,12 @@ module I18nDummy
           raise I18nDummy::Error.new("[#{file}] Invalid syntax according to Psych: #{e.message}")
       end
 
-      def parse
+      def parse(content)
         key_path      = []
         value_stack   = []
         previous_node = nil
 
-        content = File.read(file).split("\n")
-        content.each do |line|
+        content.split("\n").each do |line|
           @current_line += 1
 
           if is_key_value?(line, previous_node)

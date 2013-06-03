@@ -23,7 +23,10 @@ module I18nDummy
       end
 
       def to_html
-        "<span>#{Rack::Utils.escape_html(content.quote)}<em class='comment'>#{comment_output}</em></span>"
+        %Q(<span>
+            #{Rack::Utils.escape_html(content.quote)}
+            <em class='comment'>#{comment_output}</em>
+          </span>)
       end
 
       def pending?

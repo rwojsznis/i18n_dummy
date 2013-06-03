@@ -96,11 +96,21 @@ module I18nDummy
       end
 
       def to_html(file = nil, base = nil)
-        "<tr#{css_class(base)}><td>#{line}</td><td style='padding-left: #{depth}em'><a href='#{link(file)}'>#{key}:</a>#{output_html_value}</tr></td>"
+        %Q(<tr#{css_class(base)}>
+          <td>
+            #{line}
+          </td>
+          <td style='padding-left: #{depth}em'>
+            <a href='#{link(file)}'>#{key}:</a>#{output_html_value}
+          </td>
+         </tr>)
       end
 
       def to_html_diff
-        "<tr><td>#{line}</td><td>#{full_path}:#{output_html_value}</td></tr>"
+        %Q(<tr>
+            <td>#{line}</td>
+            <td>#{full_path}:#{output_html_value}</td>
+           </tr>)
       end
 
       def fixmes!

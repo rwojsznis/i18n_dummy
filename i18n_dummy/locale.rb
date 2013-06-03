@@ -7,9 +7,9 @@ module I18nDummy
         start = Time.now
 
         result = locale.dup
-        result.parsed = [locale.parsed.first] # grab head
+        result.parsed = [locale.head]
 
-        base.parsed.drop(1).each_with_index do |node, idx|
+        base.without_head.each_with_index do |node, idx|
           node_local = locale.find_by_path(node.full_path)
 
           if node_local.nil?
