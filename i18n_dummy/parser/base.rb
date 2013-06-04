@@ -93,6 +93,11 @@ module I18nDummy
         content.split("\n").each do |line|
           @current_line += 1
 
+          # ignore any empty linues
+          if line.strip.empty? && previous_node && !previous_node.multiline?
+            next
+          end
+
           if is_key_value?(line, previous_node)
             previous_node.multiline!
             value_stack << line

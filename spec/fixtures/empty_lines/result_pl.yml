@@ -1,0 +1,9 @@
+pl:
+  what: "what if translation"
+  if: "will have some"
+  empty: "empty" # FIX ME
+  lines: "lines"
+  should:
+    we:
+      keep: "it?" # FIX ME
+  not: "not!"

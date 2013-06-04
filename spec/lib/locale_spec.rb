@@ -18,4 +18,8 @@ describe 'preparing locale' do
     it_behaves_like "locale preparer", "complicated"
   end
 
+  describe "locale with empty lines" do
+    it_behaves_like "locale preparer", "empty_lines"
+  end
+
 end

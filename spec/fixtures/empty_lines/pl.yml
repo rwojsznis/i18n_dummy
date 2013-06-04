@@ -1,0 +1,12 @@
+pl:
+  what: "what if translation"
+  if: "will have some"
+
+
+  lines: "lines"
+  should:
+    we:
+      keep: "it?"
+
+
+  not: "not!"
