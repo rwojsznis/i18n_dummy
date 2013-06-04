@@ -1,0 +1,3 @@
+marker:
+  symbol: +     # one or more character
+  type: prefix  # 'prefix' or 'suffix'

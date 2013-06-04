@@ -22,4 +22,17 @@ describe 'preparing locale' do
     it_behaves_like "locale preparer", "empty_lines"
   end
 
+  describe "using custom settings" do
+    before do
+      reset_settings
+      I18nDummy::Settings.stub(:config).and_return({
+        'marker' => { 'symbol' => '+', 'type' => 'prefix' }
+      })
+    end
+
+    after  { reset_settings }
+
+    it_behaves_like "locale preparer", "settings"
+  end
+
 end

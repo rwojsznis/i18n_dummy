@@ -1,0 +1,7 @@
+pl:
+  this_file: "Ten plik"
+  uses: "używa"
+  custom_markers: "Własne znaczniki"
+  damn:
+    right: "Racja!"
+  deal: "z tym"

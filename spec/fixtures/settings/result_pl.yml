@@ -1,0 +1,7 @@
+pl:
+  this_file: "Ten plik"
+  uses: "Uses" # FIX ME
+  custom_markers: "Własne znaczniki"
+  damn:
+    right: "Racja!"
+  deal: "with it" # FIX ME

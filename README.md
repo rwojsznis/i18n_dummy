@@ -33,7 +33,7 @@ Note: `base` key is required, you can name other keys to your liking.
 
 Application doesn't use any external storage, you don't hook it up to your existing rails project or anything. It runs on Sinatra using Thin server. So how it knows what needs to be translated? There is a strong assumption how to distinguish it - it uses comments. When a translation string have a `FIX ME` (or `FIXME`) comment it's marked as not translated. So when you add new key to your base locale it will be copied to other locales with that marker.
 
-There is also a way of updating keys in base locale. When you modify base translation and you want to overwrite that key in other locale you add an capital `U` (this may yet change) at the end of the key name (in a base locale). I'm not sure it this makes any sense to you, so I will provide an example:
+There is also a way of updating keys in base locale. When you modify base translation and you want to overwrite that key in other locale you add an capital `U` (this is configurable - you may use custom prefix or suffix) at the end of the key name (in a base locale). I'm not sure it this makes any sense to you, so I will provide an example:
 
 Current base:
 ``` yaml
@@ -68,6 +68,10 @@ es:
 ```
 
 As you see the `U` marker was removed and Spanish locale was synced basing on base locale. I hope that makes more sense now :).
+
+### Configuration
+
+At this point you can configure custom suffix / prefix that will be used for detecting updated keys in base locale. See the `settings.yml.example`.
 
 ### Limitations and other assumptions
 

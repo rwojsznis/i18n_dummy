@@ -1,3 +1,4 @@
 locales/*
 config.yml
+settings.yml
 spec/benchmarks/*

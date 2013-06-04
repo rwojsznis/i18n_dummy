@@ -1,0 +1,7 @@
+en:
+  this_file: "This file"
+  +uses: "Uses"
+  custom_markers: "Custom markers"
+  damn:
+    right: "Right!"
+  +deal: "with it"

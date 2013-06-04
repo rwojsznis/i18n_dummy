@@ -5,28 +5,60 @@ describe "string extensions" do
   describe "detecting marker" do
     subject { string.key_updated? }
 
-    context "when with marker" do
-      let(:string){ "this.is.my_updated_keyU" }
-      it { should be_true }
+    describe "with default settings" do
+      context "when with marker" do
+        let(:string){ "this.is.my_updated_keyU" }
+        it { should be_true }
+      end
+
+      context "when without marker" do
+        let(:string){ "this.issomekeyforu" }
+        it { should be_false }
+      end
     end
 
-    context "when without marker" do
-      let(:string){ "this.issomekeyforu" }
-      it { should be_false }
+    context "with custom marker" do
+      before { I18nDummy::Settings.stub(:marker_regex).and_return(Regexp.new /^\+/) }
+
+      context "when with marker" do
+        let(:string){ "+this.is.my_updated_key" }
+        it { should be_true }
+      end
+
+      context "when without marker" do
+        let(:string){ "this.issomekeyforu+" }
+        it { should be_false }
+      end
     end
   end
 
   describe "removing marker" do
     subject { string.without_marker }
 
-    context "when with marker" do
-      let(:string){ "this.is.my_updated_keyU" }
-      it { should eq("this.is.my_updated_key") }
+    describe "with default settings" do
+      context "when with marker" do
+        let(:string){ "this.is.my_updated_keyU" }
+        it { should eq("this.is.my_updated_key") }
+      end
+
+      context "when without marker" do
+        let(:string){ "this.issomekeyforu" }
+        it { should eq(string) }
+      end
     end
 
-    context "when without marker" do
-      let(:string){ "this.issomekeyforu" }
-      it { should eq(string) }
+    describe "with custom marker" do
+      before { I18nDummy::Settings.stub(:marker_regex).and_return(Regexp.new /^\+/) }
+
+      context "when with marker" do
+        let(:string){ "+this.is.my_updated_key" }
+        it { should eq("this.is.my_updated_key") }
+      end
+
+      context "when without marker" do
+        let(:string){ "this.issomekeyforu+" }
+        it { should eq(string) }
+      end
     end
   end
 

@@ -1,10 +1,10 @@
 class String
   def without_marker
-    gsub(/U$/,'')
+    gsub ::I18nDummy::Settings.marker_regex, ''
   end
 
   def key_updated?
-    (self =~ /U$/).to_i > 0
+    match ::I18nDummy::Settings.marker_regex
   end
 
   def dequote
