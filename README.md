@@ -73,6 +73,12 @@ As you see the `U` marker was removed and Spanish locale was synced basing on ba
 
 At this point you can configure custom suffix / prefix that will be used for detecting updated keys in base locale. See the `settings.yml.example`.
 
+### Sublime Text URL handler
+
+* [Mac OS][1]
+* [Windows][2]
+* [Ubuntu (and probably other distros)][3]
+
 ### Limitations and other assumptions
 
 * first of all this project is in very early stage, it was basically written in one weekend so don't expect to much ;) - it's not heavily tested, there is a huge probability that it might blow up in your face at this stage
@@ -89,3 +95,7 @@ At this point you can configure custom suffix / prefix that will be used for det
 
 
 I hope I will find some spare time to keep this project alive :).
+
+[1]: https://github.com/asuth/subl-handler
+[2]: https://bitbucket.org/sublimator/sublimeprotocol/overview
+[3]: http://stackoverflow.com/a/14775172/1461766
