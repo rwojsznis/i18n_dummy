@@ -1,0 +1,6 @@
+pl:
+  key:
+    value: "Value"
+  that: # u
+    makes: # ok?
+      more: "Sense!" # FIX ME

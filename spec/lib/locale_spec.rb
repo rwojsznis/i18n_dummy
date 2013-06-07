@@ -22,6 +22,10 @@ describe 'preparing locale' do
     it_behaves_like "locale preparer", "empty_lines"
   end
 
+  describe "locales with comments" do
+    it_behaves_like "locale preparer", "comments"
+  end
+
   describe "using custom settings" do
     before do
       reset_settings

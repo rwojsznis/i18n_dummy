@@ -7,7 +7,7 @@ module I18nDummy
         val, comment = value.split('#', 2)
 
         args = {
-          content: val.dequote.escape,
+          content: val ? val.dequote.escape : nil,
           comment: comment ? comment.strip : nil
         }
 
@@ -15,7 +15,11 @@ module I18nDummy
       end
 
       def to_s
-        "#{content.quote}#{comment_output}"
+        "#{content_output}#{comment_output}".strip
+      end
+
+      def content_output
+        content.quote if content && !content.empty?
       end
 
       def comment_output
@@ -24,7 +28,7 @@ module I18nDummy
 
       def to_html
         %Q(<span>
-            #{Rack::Utils.escape_html(content.quote)}
+            #{Rack::Utils.escape_html(content_output)}
             <em class='comment'>#{comment_output}</em>
           </span>)
       end

@@ -7,7 +7,7 @@ module I18nDummy
         depth    = (line.size - line.lstrip.size)/2
         key, val = line.strip.split(/:/,2)
 
-        value = !val.empty? ? [NodeValue.new(val)] : []
+        value = !val.strip.empty? ? [NodeValue.new(val)] : []
 
         args = {
           :value     => value,
@@ -114,7 +114,7 @@ module I18nDummy
       end
 
       def fixmes!
-        value.each { |v| v.comment = "FIX ME" }
+        value.each { |v| v.comment = "FIX ME" unless v.content.empty? }
       end
 
       private
