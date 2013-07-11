@@ -2,3 +2,6 @@ locales/*
 config.yml
 settings.yml
 spec/benchmarks/*
+.rvmrc
+.ruby-version
+.ruby-gemset

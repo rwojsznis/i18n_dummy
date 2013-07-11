@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+require_relative '../app'
+
+begin
+  if ARGV[0].nil?
+    puts "Please provide locale key as argument"
+    exit 1
+  end
+
+  locales = I18nDummy::Config.load
+  locale  = locales.fetch(ARGV[0])
+  parsers = {}
+  parsers[:base] = I18nDummy::Parser::Base.new(locale['base'])
+  locale.each do |key, value|
+    next if key == "base"
+
+    local_parser = I18nDummy::Parser::Base.new(value)
+    parsers[key.to_sym] = I18nDummy::Locale.prepare!(parsers[:base], local_parser)
+  end
+
+  parsers.each do |key, value|
+     value.validate!
+  end
+
+  parsers.each do |key, value|
+    value.save!
+  end
+
+  puts "Done."
+rescue => e
+  STDERR.puts e.message
+  STDERR.puts e.backtrace.join("\n")
+  exit 1
+end
