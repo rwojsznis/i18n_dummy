@@ -6,7 +6,7 @@ Slow, clumsy pseudo yaml parser for your Rails locales. More description coming 
 
 ### What it is all about and how to use it?
 
-1. Clone the repository to your local machine and install required gems (`.ruby-version` file included)
+1. Clone the repository to your local machine and install required gems
 
 2. Create `config.yml` file in root directory. Included example below:
 
