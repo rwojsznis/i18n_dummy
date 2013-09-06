@@ -2,7 +2,7 @@ en:
   old_key: "How r u?"
   new_key:
     key1: "I'm fine"
-    key2: 'I''m "fine"'
+    key2: 'I''m "fine"' # FIX ME
     key3: "I'm \"fine\""
     key4: "http://www.test.com/example.com"
     key5: 'http://see.us/?test'

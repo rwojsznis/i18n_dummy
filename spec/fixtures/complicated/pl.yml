@@ -11,7 +11,7 @@ pl:
       greetings: "Witaj"
       greetings_no_name: "Witaj"
       application: "Przejdź do aplikacji"
-      tagline: "Monitoruj pozycje stron w wyszukiwarkach"
+      tagline: "Monitoruj pozycje stron w wyszukiwarkach #seoguru"
       questions: "Pytania?"
       contact: "Osoba kontaktowa"
       unsubscribe_html: "Możesz <a class='fadedOut' href='%{url}'>wypisać się</a> z cyklicznych notyfikacji."

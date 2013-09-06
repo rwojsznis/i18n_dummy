@@ -12,7 +12,7 @@ pl:
         hi: "Hi" # FIX ME
       greetings_no_name: "Witaj"
       application: "Przejdź do aplikacji"
-      tagline: "Monitoruj pozycje stron w wyszukiwarkach"
+      tagline: "Monitoruj pozycje stron w wyszukiwarkach #seoguru"
       questions: "Pytania?"
       contact: "Osoba kontaktowa"
       support:

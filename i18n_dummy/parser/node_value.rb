@@ -4,14 +4,19 @@ module I18nDummy
       def initialize(value)
         value = value.strip.gsub(/^-\s?/,'')
 
-        val, comment = value.split('#', 2)
+        split_on = (value =~ /^("|')/) ? /(?:"|')\s?#/ : '#'
+
+        # 'I''m "fine"' -> ' #
+        # "I'm fine"    -> " #
+
+        val, comment = value.split(split_on, 2)
 
         args = {
           content: val ? val.dequote.escape : nil,
           comment: comment ? comment.strip : nil
         }
 
-        super *args.values
+        super(*args.values)
       end
 
       def to_s
