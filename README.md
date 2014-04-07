@@ -1,5 +1,11 @@
 ## i18n Dummy
 
+---
+
+**PROJECT CLOSED.** You can use [sy18nc](https://github.com/michaldarda/sy18nc) by @michaldarda - it's based on (more or less) same idea, but better :)
+
+---
+
 Slow, clumsy pseudo yaml parser for your Rails locales. More description coming soon (hopefully).
 
 **This is still work in progress**, be careful and use a long stick!
